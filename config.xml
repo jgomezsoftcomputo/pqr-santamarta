@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+    id="co.com.softcomputo.solicitudcitasaludsion"
+    version="1.2.1" xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>PQR Santamarta</name>
+    <description>PQR Santamarta</description>
+    <author email="jgomez.softcomputo@gmail.com" href="http://softcomputo.com.co">Jhonny Gomez</author>
+    <content src="index.html" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-file" source="npm" spec="~4.3.0" />
+    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.6.0" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
+    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <platform name="android">
+        <icon density="mdpi" src="www/res/icons/android/mipmap-mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="www/res/icons/android/mipmap-hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="www/res/icons/android/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="www/res/icons/android/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="www/res/icons/android/mipmap-xxxhdpi/ic_launcher.png" />
+    </platform>
+    <access origin="*" />
+    <icon src="www/res/icon.png" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+</widget>

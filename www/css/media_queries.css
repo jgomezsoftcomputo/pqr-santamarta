@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-nov-2016, 10:18:24
+    Author     : Softcomputo_BarriosFreddy
+*/
+
+@media screen and (max-width : 767px){
+    .logo{
+        display: none !important;
+    }
+    
+    .user{
+        display: none !important;
+    }
+}
+
+@media screen and (min-width : 768px) and (max-width : 991px){
+
+}
+
+@media screen and (min-width : 992px) and (max-width : 1200px){ 
+
+}
+
+@media screen and (max-width : 1200px){
+
+}

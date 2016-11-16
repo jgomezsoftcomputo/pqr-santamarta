@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PQRS</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link href="target/css/libs/libraries.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/media_queries.css" rel="stylesheet" type="text/css"/>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div id="pqr_module">
+            <div class="ui fixed background_bar menu">
+                <div class="ui fluid container">
+                    <div class="right menu">
+                        <!--<a href="#" class="item" data-bind="click: toggle"><i class="fa fa-database" data-bind="css: (toggleView() ? 'fa-database': 'fa-plus')"></i></a>-->
+                        <a href="#" class="item right" data-bind="click: send, visible: hideSendButton()"><i class="fa fa-send green_color" ></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui bottom attached segment pushable margin_top_content">
+                <!--                <div class="ui inverted left vertical sidebar menu margin_top_content">
+                                    <a class="item">
+                                        <i class="home icon"></i>
+                                        Reporte de PQR
+                                    </a>
+                                </div>-->
+                <div class="pusher">
+                    <div class="ui basic segment">
+                        <div data-bind="visible: toggleView()">
+
+                            <form class="ui form" id="form_pqr" enctype="multipart/form-data">
+                                <div class="required field">
+                                    <label>Identificación</label>
+                                    <input type="text" name="identificacion" placeholder="Identificación"
+                                           data-bind="value: identificacion">
+                                </div>
+                                <div class="required field">
+                                    <label>Nombre</label>
+                                    <input type="text" name="nombre" placeholder="Nombre"
+                                           data-bind="value: nombre">
+                                </div>
+                                <div class="two fields">
+                                    <div class="field" data-bind="visible: enableField()">
+                                        <label>Departamento</label>
+                                        <!--class="ui fluid dropdown search selection"-->
+                                        <select  name="departamento"
+                                                 data-bind="value: idDepartamento">
+                                            <!--<option value="" data-bind="value: valor, html: descripcion"></option>, foreach: departamentos , event:{ change : getMunicipios}-->
+                                            <option value="15">Magdalena</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="field" data-bind="visible: !enableField()">
+                                        <label>Departamento</label>
+                                        <input type="text" data-bind="value: departamentoName, readOnly: true"/>
+                                    </div>
+
+                                    <div class="field" data-bind="visible: enableField()">
+                                        <label>Municipio</label>
+                                        <!--class="ui fluid dropdown search selection"-->
+                                        <select  name="municipio"
+                                                 data-bind="value: idMunicipio">
+                                            <!--<option value="" data-bind="value: valor, html: descripcion"></option>, event:{ change : getEntidades} , foreach: municipios,-->
+                                            <option value="740">Santa Marta</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="field" data-bind="visible: !enableField()">
+                                        <label>Municipio</label>
+                                        <input type="text" data-bind="value: municipioName, readOnly: true"/>
+                                    </div>
+                                </div>
+                                <!--class="ui fluid dropdown search selection"-->
+                                <div class="required field" data-bind="visible: enableField()">
+                                    <label>Entidad</label>
+                                    <select  name="entidad"
+                                             data-bind="value: idEntidad, foreach: entidades">
+                                        <option value="" data-bind="value: valor, html: descripcion"></option>
+                                    </select>
+                                </div>
+                                <div class="required field" data-bind="visible: !enableField()">
+                                    <label>Entidad</label>
+                                    <input type="text"  data-bind="value: entidadName, readOnly: true, visible: !enableField()"/>
+                                </div>
+                                <div class="required field"  data-bind="visible: enableField()">
+                                    <label>Clase</label>
+                                    <!--class="ui fluid dropdown search selection"-->
+                                    <select  name="clase"
+                                             data-bind="value: clase, foreach: clasesPQR">
+                                        <option value="" data-bind="value: valor, html: descripcion"></option>
+                                    </select>
+                                </div>
+                                <div class="required field" data-bind="visible: !enableField()">
+                                    <label>Clase</label>
+                                    <input type="text" data-bind="value: claseName, readOnly: true, visible: !enableField()"/>
+                                </div>
+                                <div class="required field">
+                                    <label>Descripción</label>
+                                    <textarea rows="2" data-bind="value: descripcion, readOnly: !enableField()" name="descripcion"></textarea>
+                                </div>
+                                <div class="ui segment" >
+                                    <br id="guideToAddFile"/>
+                                    <div class="field"  data-bind="visible: enableField()">
+                                        <div class="ui button green" tabindex="0" data-bind="click: addFileToTheView">
+                                            <i class="fa fa-paperclip"></i>&nbsp;Agregar archivo
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div data-bind="visible: !toggleView()">
+                            <table class="ui compact table">
+                                <tbody data-bind="foreach: registros">
+                                    <tr data-bind="click: function(){ $parent.show($data);}">
+                                        <td data-bind="text: radicado +' - '+descripcion"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="target/js/libs/libraries.min.js" type="text/javascript"></script>
+        <script src="target/js/utilities/utilities.min.js" type="text/javascript"></script>
+        <script src="js/main/Middleware.js" type="text/javascript"></script>
+        <script src="target/js/services/services.min.js" type="text/javascript"></script>
+        <script src="target/js/controllers/controllers.min.js" type="text/javascript"></script>
+        <script src="js/main/index.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "pqr-web-resource",
+  "version": "1.0.0",
+  "description": "pqr",
+  "main": "gulpfile.js",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Softcomputo_BarriosFreddy",
+  "repository": "",
+  "license": "",
+  "contributors": [],
+  "dependencies": {
+    "semantic-ui": "^2.2.6"
+  },
+  "devDependencies": {
+    "bower-files": "^3.14.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-order": "^1.1.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uglifycss": "^1.0.6"
+  }
+}
