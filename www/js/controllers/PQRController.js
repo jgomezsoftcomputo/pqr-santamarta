@@ -56,6 +56,8 @@ this.getEntidades();
 PQRController.prototype.validate = function () {
     var validation = {};
     validation.fields = {};
+    validation.inline = true;
+    validation.on = 'blur';
     var fields = validation.fields;
 
     fields.identificacion = {
