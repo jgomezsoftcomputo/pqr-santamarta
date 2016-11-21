@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget
     id="co.com.softcomputo.pqrsantamarta"
-    version="1.2.1" xmlns="http://www.w3.org/ns/widgets"
+    version="1.0.1" xmlns="http://www.w3.org/ns/widgets"
     xmlns:gap="http://phonegap.com/ns/1.0">
     <name>PQR Santamarta</name>
     <description>PQR Santamarta</description>
@@ -25,7 +25,7 @@
         <icon density="xxhdpi" src="www/res/icons/android/mipmap-xxhdpi/ic_launcher.png" />
         <icon density="xxxhdpi" src="www/res/icons/android/mipmap-xxxhdpi/ic_launcher.png" />
     </platform>
-    <access origin="*" subdomains="true"/>
+    <access origin="*"/>
     <icon src="www/res/icon.png" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
