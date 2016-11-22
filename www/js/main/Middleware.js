@@ -27,6 +27,7 @@
         this.backendPath = {
             url_backend: "http://192.168.1.135:8080/psmanagercrue-webui",
             url_path_backend: "/reportepqr/",
+            url_path_backend_post: "/reportepqr_mobile/",
             url_backend_index: "/indexservice",
             url_path_backend_index: "/webresources/",
             url_rest_index: "index/find",
@@ -135,7 +136,7 @@
 //            loadingController.show();
 //        }
         $.ajax({
-            url: this.backendPath.url_backend + this.backendPath.url_path_backend + url,
+            url: this.backendPath.url_backend + this.backendPath.url_path_backend_post + url,
             type: 'POST',
             data: formData,
             processData: false, // tell jQuery not to process the data
