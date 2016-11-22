@@ -124,7 +124,7 @@
 
     Middleware.prototype.post = function (url, data, callback) {
         callback.validPost = true;
-        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend + url, 'POST', data, this.contentTypePostUrl, callback);
+        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend_post + url, 'POST', data, this.contentTypePostUrl, callback);
     };
 
     Middleware.prototype.postFormData = function (url, formData, callback) {
@@ -213,7 +213,7 @@
 
     Middleware.prototype.postJsonObject = function (url, jsonObject, callback) {
 //        callback.validPost = true;
-        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend + url, 'POST', JSON.stringify(jsonObject), this.contentTypeJson, callback);
+        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend_post + url, 'POST', JSON.stringify(jsonObject), this.contentTypeJson, callback);
     };
 
     Middleware.prototype.getP = function (url, data, callback) {
@@ -356,7 +356,7 @@
 
     Middleware.prototype.updateCargoEmpresa = function (idCargoEmpresa, idRol, idEmpresa, idCentroAtencion) {
         $.ajax({
-            url: this.backendPath.url_backend + this.backendPath.url_path_backend + "session/updateCargoEmpresa",
+            url: this.backendPath.url_backend + this.backendPath.url_path_backend_post + "session/updateCargoEmpresa",
             type: 'POST',
             data: {idCargoEmpresa: idCargoEmpresa, idRol: idRol, idEmpresa: idEmpresa, idCentroAtencion: idCentroAtencion}
         }).done(function () {
