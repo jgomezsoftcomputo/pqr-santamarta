@@ -27,6 +27,7 @@
         this.backendPath = {
             url_backend: "http://192.168.1.135:8080/psmanagercrue-webui",
             url_path_backend: "/reportepqr/",
+            url_path_backend_post: "/reportepqr_mobile/",
             url_backend_index: "/indexservice",
             url_path_backend_index: "/webresources/",
             url_rest_index: "index/find",
@@ -123,7 +124,7 @@
 
     Middleware.prototype.post = function (url, data, callback) {
         callback.validPost = true;
-        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend + url, 'POST', data, this.contentTypePostUrl, callback);
+        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend_post + url, 'POST', data, this.contentTypePostUrl, callback);
     };
 
     Middleware.prototype.postFormData = function (url, formData, callback) {
@@ -135,7 +136,7 @@
 //            loadingController.show();
 //        }
         $.ajax({
-            url: this.backendPath.url_backend + this.backendPath.url_path_backend + url,
+            url: this.backendPath.url_backend + this.backendPath.url_path_backend_post + url,
             type: 'POST',
             data: formData,
             processData: false, // tell jQuery not to process the data
@@ -212,7 +213,7 @@
 
     Middleware.prototype.postJsonObject = function (url, jsonObject, callback) {
 //        callback.validPost = true;
-        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend + url, 'POST', JSON.stringify(jsonObject), this.contentTypeJson, callback);
+        this.sendServer(this.backendPath.url_backend + this.backendPath.url_path_backend_post + url, 'POST', JSON.stringify(jsonObject), this.contentTypeJson, callback);
     };
 
     Middleware.prototype.getP = function (url, data, callback) {
@@ -355,7 +356,7 @@
 
     Middleware.prototype.updateCargoEmpresa = function (idCargoEmpresa, idRol, idEmpresa, idCentroAtencion) {
         $.ajax({
-            url: this.backendPath.url_backend + this.backendPath.url_path_backend + "session/updateCargoEmpresa",
+            url: this.backendPath.url_backend + this.backendPath.url_path_backend_post + "session/updateCargoEmpresa",
             type: 'POST',
             data: {idCargoEmpresa: idCargoEmpresa, idRol: idRol, idEmpresa: idEmpresa, idCentroAtencion: idCentroAtencion}
         }).done(function () {
