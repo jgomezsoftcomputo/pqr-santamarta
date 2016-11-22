@@ -25,7 +25,7 @@
         <icon density="xxhdpi" src="www/res/icons/android/mipmap-xxhdpi/ic_launcher.png" />
         <icon density="xxxhdpi" src="www/res/icons/android/mipmap-xxxhdpi/ic_launcher.png" />
     </platform>
-    <access origin="*"/>
+    <access origin="*" subdomains="true" />
     <icon src="www/res/icon.png" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
