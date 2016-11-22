@@ -48,7 +48,7 @@ PQRController.prototype.setup = function () {
     this.validate();
 
 //    this.getDepartamentos();
-this.getEntidades();
+    this.getEntidades();
     this.getClasesPQR();
 };
 
@@ -151,6 +151,7 @@ PQRController.prototype.getEntidades = function () {
         this.entidadesPQRServive.findByMunicipio(this.idMunicipio(), function (data) {
             if (data && data.totalRegistros > 0) {
                 var entidades = [];
+                entidades.push({valor: '', descripcion: 'Seleccionar'});
                 data.registros.map(function (entidad) {
                     entidades.push({valor: entidad.id, descripcion: entidad.nombre});
                 });
@@ -165,7 +166,12 @@ PQRController.prototype.getClasesPQR = function () {
     var self = this;
     this.typesService.findByName("TipoClasePQR", function (data) {
         if (data) {
-            self.clasesPQR(data);
+            var clases = [];
+            clases.push({valor: '', descripcion: 'Seleccionar'});
+            data.map(function (clase) {
+                clases.push({valor: clase.valor, descripcion: clase.descripcion});
+            });
+            self.clasesPQR(clases);
         }
     });
 };
@@ -300,7 +306,7 @@ PQRController.prototype.show = function (data) {
                                     if (extension !== 'pdf') {
                                         self.fileDownloadUtil.download(name, Base64PQR.decode(data), 'image/' + extension);
                                     } else {
-                                         self.fileDownloadUtil.download(name, Base64PQR.decode(data), 'application/' + extension);
+                                        self.fileDownloadUtil.download(name, Base64PQR.decode(data), 'application/' + extension);
                                     }
                                 });
 
@@ -438,7 +444,7 @@ PQRController.prototype.clear = function () {
     this.nombre(null);
     this.idDepartamento(null);
     this.idMunicipio(null);
-    this.idEntidad(null);
+    this.idEntidad("");
     this.clase(null);
     this.descripcion(null);
     this.departamentoName(null);
