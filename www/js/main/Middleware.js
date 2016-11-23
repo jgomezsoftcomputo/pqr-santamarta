@@ -25,7 +25,7 @@
         this.scope = this.TIPO_SCOPE_PROD;
 
         this.backendPath = {
-            url_backend: "http://192.168.1.135:8080/psmanagercrue-webui",
+            url_backend: "http://dns.smartcrue.com.co:8180/psmanagercrue-webui",
             url_path_backend: "/reportepqr/",
             url_path_backend_post: "/reportepqr_mobile/",
             url_backend_index: "/indexservice",
